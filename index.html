@@ -1,41 +1,2321 @@
 <!DOCTYPE html>
-
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Personal website Mitha Chaerunnisa">
 
     <title>My Personal Story | Mitha</title>
 
-    <!-- Google Fonts -->
-
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =========================
+         CSS
+    ========================== -->
 
     <style>
 
-        /* ==============================
-
-           GLOBAL
-
-        ============================== */
+        /* =========================
+           RESET
+        ========================== */
 
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f7f2e9;
+            color: #40382f;
+            line-height: 1.7;
+            transition: background 0.4s ease,
+                        color 0.4s ease;
+        }
+
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        button {
+            font-family: inherit;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            padding: 18px 7%;
+
+            background: rgba(255, 253, 248, 0.95);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom:
+                1px solid #ded3c3;
+        }
+
+
+        nav {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 32px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+            position: relative;
+
+            font-size: 12px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -6px;
+
+            width: 0;
+
+            height: 1px;
+
+            background: #806b54;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        .theme-button {
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid #b9aa96;
+
+            background: transparent;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            color: #40382f;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            padding:
+                150px 7% 90px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 80px;
+        }
+
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+
+        .eyebrow {
+            display: block;
+
+            margin-bottom: 18px;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #917b62;
+        }
+
+
+        .hero h1 {
+            font-size:
+                clamp(65px, 9vw, 115px);
+
+            font-weight: 500;
+
+            line-height: 0.85;
+        }
+
+
+        .hero h1 span {
+            color: #8a755d;
+
+            font-style: italic;
+        }
+
+
+        .hero-description {
+            max-width: 520px;
+
+            margin-top: 35px;
+
+            font-size: 15px;
+
+            color: #6d6257;
+        }
+
+
+        .hero-button {
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding:
+                13px 28px;
+
+            border:
+                1px solid #806b54;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+
+        .hero-button:hover {
+            background: #806b54;
+
+            color: #fff;
+        }
+
+
+        /* =========================
+           PROFILE FRAME
+        ========================== */
+
+        .profile-container {
+            width: 390px;
+
+            min-width: 280px;
+
+            position: relative;
+        }
+
+
+        .profile-frame {
+            position: relative;
+
+            padding: 18px;
+
+            background: #fffdf8;
+
+            border:
+                1px solid #bba990;
+
+            box-shadow:
+                0 0 0 8px #f7f2e9,
+                0 0 0 9px #cbbba6,
+                18px 25px 45px
+                rgba(65, 50, 35, 0.16);
+        }
+
+
+        /* Ornamen frame */
+
+        .profile-frame::before {
+            content: "✦";
+
+            position: absolute;
+
+            top: -20px;
+            left: -18px;
+
+            font-size: 28px;
+
+            color: #9b856b;
+        }
+
+
+        .profile-frame::after {
+            content: "✦";
+
+            position: absolute;
+
+            right: -18px;
+            bottom: -20px;
+
+            font-size: 28px;
+
+            color: #9b856b;
+        }
+
+
+        .profile-image {
+            width: 100%;
+
+            aspect-ratio: 4 / 5;
+
+            object-fit: cover;
+
+            background: #e8ded0;
+        }
+
+
+        .profile-name {
+            padding-top: 15px;
+
+            text-align: center;
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 24px;
+
+            font-style: italic;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================== */
+
+        section {
+            padding:
+                110px 7%;
+        }
+
+
+        .white-section {
+            background: #fffdf8;
+        }
+
+
+        .section-heading {
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+
+        .section-heading span {
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #9a8268;
+        }
+
+
+        .section-heading h2 {
+            font-size: 58px;
+
+            font-weight: 500;
+        }
+
+
+        .section-heading p {
+            max-width: 600px;
+
+            margin:
+                12px auto 0;
+
+            font-size: 14px;
+
+            color: #766b60;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-wrapper {
+            max-width: 950px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 65px;
+
+            align-items: center;
+        }
+
+
+        .about-text p {
+            margin-bottom: 18px;
+
+            font-size: 15px;
+
+            color: #655b50;
+        }
+
+
+        .quote {
+            padding: 35px;
+
+            border-left:
+                2px solid #b49e83;
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 32px;
+
+            line-height: 1.3;
+
+            font-style: italic;
+
+            color: #6d5b47;
+        }
+
+
+        /* =========================
+           JOURNEY / TIMELINE
+        ========================== */
+
+        .timeline {
+            max-width: 900px;
+
+            margin: auto;
+
+            position: relative;
+        }
+
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+
+            left: 50%;
+
+            width: 1px;
+
+            background: #cbbca9;
+
+            transform:
+                translateX(-50%);
+        }
+
+
+        .timeline-item {
+            width: 50%;
+
+            padding:
+                20px 45px;
+
+            position: relative;
+        }
+
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+        }
+
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+        }
+
+
+        .timeline-dot {
+            position: absolute;
+
+            top: 29px;
+
+            width: 12px;
+            height: 12px;
+
+            border-radius: 50%;
+
+            background: #8d765b;
+
+            border:
+                3px solid #f7f2e9;
+        }
+
+
+        .timeline-item:nth-child(odd)
+        .timeline-dot {
+            right: -6px;
+        }
+
+
+        .timeline-item:nth-child(even)
+        .timeline-dot {
+            left: -6px;
+        }
+
+
+        .timeline-year {
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            color: #9a8064;
+        }
+
+
+        .timeline-item h3 {
+            margin:
+                5px 0;
+
+            font-size: 31px;
+        }
+
+
+        .timeline-item p {
+            font-size: 13px;
+
+            color: #71675c;
+        }
+
+
+        /* =========================
+           INTERESTS
+        ========================== */
+
+        .interest-grid {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .interest-card {
+            padding:
+                40px 25px;
+
+            text-align: center;
+
+            background: #faf6ef;
+
+            border:
+                1px solid #ddd1c0;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+
+        .interest-card:hover {
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                0 18px 35px
+                rgba(65, 50, 35, 0.10);
+        }
+
+
+        .interest-icon {
+            font-size: 34px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .interest-card h3 {
+            font-size: 29px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .interest-card p {
+            font-size: 13px;
+
+            color: #756b60;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-container {
+            max-width: 750px;
+
+            margin: auto;
+        }
+
+
+        .skill {
+            margin-bottom: 28px;
+        }
+
+
+        .skill-info {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            margin-bottom: 7px;
+
+            font-size: 13px;
+        }
+
+
+        .skill-bar {
+            width: 100%;
+
+            height: 5px;
+
+            background: #e1d8cb;
+        }
+
+
+        .skill-progress {
+            width: 0;
+
+            height: 100%;
+
+            background: #806b54;
+
+            transition:
+                width 1.5s ease;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery-grid {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .gallery-item {
+            height: 280px;
+
+            overflow: hidden;
+
+            cursor: pointer;
+
+            background: #e9dfd1;
+        }
+
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+
+        .gallery-item:hover img {
+            transform:
+                scale(1.08);
+        }
+
+
+        /* =========================
+           GOALS
+        ========================== */
+
+        .goals-container {
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+
+        .goals-description {
+            max-width: 650px;
+
+            margin: auto;
+
+            font-size: 14px;
+
+            color: #6c6258;
+        }
+
+
+        .goals-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-top: 45px;
+        }
+
+
+        .goal-card {
+            padding: 35px 25px;
+
+            border:
+                1px solid #d5c8b7;
+
+            background: #faf6ef;
+        }
+
+
+        .goal-card h3 {
+            margin-bottom: 8px;
+
+            font-size: 29px;
+        }
+
+
+        .goal-card p {
+            font-size: 13px;
+
+            color: #756b60;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-section {
+            background: #e8ddce;
+
+            text-align: center;
+        }
+
+
+        .contact-section h2 {
+            font-size: 68px;
+
+            font-weight: 500;
+        }
+
+
+        .contact-description {
+            max-width: 550px;
+
+            margin:
+                15px auto 30px;
+
+            font-size: 14px;
+
+            color: #655b50;
+        }
+
+
+        .social-links {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .social-links a {
+            padding-bottom: 4px;
+
+            border-bottom:
+                1px solid #806b54;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 25px;
+
+            background: #40382f;
+
+            color: #eee4d7;
+
+            text-align: center;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           SCROLL ANIMATION
+        ========================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform:
+                translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+
+        .reveal.active {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================
+           LIGHTBOX
+        ========================== */
+
+        .lightbox {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+
+            background:
+                rgba(25, 21, 18, 0.93);
+        }
+
+
+        .lightbox img {
+            max-width: 90%;
+
+            max-height: 90%;
+
+            object-fit: contain;
+        }
+
+
+        .close-lightbox {
+            position: absolute;
+
+            top: 25px;
+
+            right: 30px;
+
+            border: none;
+
+            background: none;
+
+            color: white;
+
+            font-size: 35px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           DARK MODE
+        ========================== */
+
+        body.dark {
+            background: #27221e;
+
+            color: #eee5d8;
+        }
+
+
+        body.dark header,
+        body.dark .white-section {
+            background: #302a25;
+        }
+
+
+        body.dark .hero-description,
+        body.dark .about-text p,
+        body.dark .timeline-item p,
+        body.dark .section-heading p,
+        body.dark .interest-card p,
+        body.dark .goal-card p {
+            color: #c6baab;
+        }
+
+
+        body.dark .interest-card,
+        body.dark .goal-card {
+            background: #362f29;
+
+            border-color: #50463c;
+        }
+
+
+        body.dark .profile-frame {
+            background: #362f29;
+
+            border-color: #756453;
+        }
+
+
+        body.dark .contact-section {
+            background: #3a322a;
+        }
+
+
+        body.dark .theme-button {
+            color: #eee5d8;
+        }
+
+
+        /* =========================
+           RESPONSIVE TABLET
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+
+            .hero {
+                flex-direction:
+                    column-reverse;
+
+                text-align: center;
+
+                padding-top: 140px;
+            }
+
+
+            .hero-content {
+                margin: auto;
+            }
+
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .profile-container {
+                width: 300px;
+            }
+
+
+            .about-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+
+            .interest-grid,
+            .goals-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .gallery-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .timeline::before {
+                left: 10px;
+            }
+
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                width: 100%;
+
+                margin-left: 0;
+
+                padding-left: 40px;
+
+                text-align: left;
+            }
+
+
+            .timeline-item:nth-child(odd) {
+                text-align: left;
+            }
+
+
+            .timeline-item:nth-child(odd)
+            .timeline-dot,
+            .timeline-item:nth-child(even)
+            .timeline-dot {
+                left: 4px;
+
+                right: auto;
+            }
+        }
+
+
+        /* =========================
+           RESPONSIVE MOBILE
+        ========================== */
+
+        @media (max-width: 500px) {
+
+            header {
+                padding:
+                    15px 5%;
+            }
+
+
+            section {
+                padding:
+                    80px 6%;
+            }
+
+
+            .hero {
+                padding:
+                    120px 6% 70px;
+            }
+
+
+            .hero h1 {
+                font-size: 65px;
+            }
+
+
+            .section-heading h2 {
+                font-size: 45px;
+            }
+
+
+            .contact-section h2 {
+                font-size: 48px;
+            }
+
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .gallery-item {
+                height: 320px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                M.
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#journey">
+                        Journey
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#interests">
+                        Interests
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#gallery">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#goals">
+                        Goals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <button
+                class="theme-button"
+                id="themeButton"
+                aria-label="Ganti tema">
+
+                ☾
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="home">
+
+
+            <div
+                class="hero-content reveal">
+
+
+                <span class="eyebrow">
+                    Welcome to my story
+                </span>
+
+
+                <h1>
+                    Hello,<br>
+                    I'm <span>Mitha.</span>
+                </h1>
+
+
+                <p class="hero-description">
+
+                    A student, a dreamer, and someone
+                    who is always learning, growing,
+                    and discovering new things.
+
+                </p>
+
+
+                <a
+                    href="#about"
+                    class="hero-button">
+
+                    Explore My Story
+
+                </a>
+
+            </div>
+
+
+            <!-- FOTO PROFIL -->
+
+            <div
+                class="profile-container reveal">
+
+
+                <div
+                    class="profile-frame">
+
+
+                    <!--
+                        GANTI URL DI BAWAH
+                        DENGAN FOTO KAMU
+                    -->
+
+                    <img
+                        class="profile-image"
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80"
+                        alt="Foto profil Mitha">
+
+
+                    <div class="profile-name">
+
+                        Mitha Chaerunnisa
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT ME
+        ========================== -->
+
+        <section
+            class="white-section"
+            id="about">
+
+
+            <div
+                class="section-heading reveal">
+
+                <span>
+                    01 — About Me
+                </span>
+
+                <h2>
+                    Who Am I?
+                </h2>
+
+                <p>
+                    A little introduction about me
+                    and the person I am becoming.
+                </p>
+
+            </div>
+
+
+            <div
+                class="about-wrapper reveal">
+
+
+                <div class="about-text">
+
+                    <p>
+                        Hello! My name is Mitha.
+                        I am a student who enjoys
+                        learning new things and
+                        exploring different interests.
+                    </p>
+
+
+                    <p>
+                        I believe that every experience,
+                        even the smallest one, can teach
+                        us something valuable.
+                    </p>
+
+
+                    <p>
+                        This website is a small collection
+                        of my story, interests, experiences,
+                        and dreams.
+                    </p>
+
+                </div>
+
+
+                <div class="quote">
+
+                    “Every chapter of life has
+                    something beautiful waiting
+                    to be discovered.”
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             JOURNEY
+        ========================== -->
+
+        <section
+            id="journey">
+
+
+            <div
+                class="section-heading reveal">
+
+                <span>
+                    02 — My Journey
+                </span>
+
+                <h2>
+                    My Story So Far
+                </h2>
+
+                <p>
+                    Every year is another chapter
+                    of my story.
+                </p>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <div
+                    class="timeline-item reveal">
+
+                    <div class="timeline-dot"></div>
+
+                    <span class="timeline-year">
+                        2010
+                    </span>
+
+                    <h3>
+                        A New Beginning
+                    </h3>
+
+                    <p>
+                        The beginning of my journey
+                        and the first chapter of my life.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="timeline-item reveal">
+
+                    <div class="timeline-dot"></div>
+
+                    <span class="timeline-year">
+                        2020
+                    </span>
+
+                    <h3>
+                        A New Chapter
+                    </h3>
+
+                    <p>
+                        Learning new things and
+                        discovering more about myself.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="timeline-item reveal">
+
+                    <div class="timeline-dot"></div>
+
+                    <span class="timeline-year">
+                        2024
+                    </span>
+
+                    <h3>
+                        Growing Up
+                    </h3>
+
+                    <p>
+                        Exploring new interests and
+                        creating new experiences.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="timeline-item reveal">
+
+                    <div class="timeline-dot"></div>
+
+                    <span class="timeline-year">
+                        2026
+                    </span>
+
+                    <h3>
+                        Where I Am Now
+                    </h3>
+
+                    <p>
+                        Continuing to learn, grow,
+                        and prepare for the future.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTERESTS
+        ========================== -->
+
+        <section
+            class="white-section"
+            id="interests">
+
+
+            <div
+                class="section-heading reveal">
+
+                <span>
+                    03 — My Interests
+                </span>
+
+                <h2>
+                    Things I Love
+                </h2>
+
+                <p>
+                    Some of the things that make
+                    me happy and inspire me.
+                </p>
+
+            </div>
+
+
+            <div class="interest-grid">
+
+
+                <div
+                    class="interest-card reveal">
+
+                    <div class="interest-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Learning
+                    </h3>
+
+                    <p>
+                        Discovering new knowledge
+                        and learning new things.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="interest-card reveal">
+
+                    <div class="interest-icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Creativity
+                    </h3>
+
+                    <p>
+                        Expressing ideas through
+                        creativity and imagination.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="interest-card reveal">
+
+                    <div class="interest-icon">
+                        📸
+                    </div>
+
+                    <h3>
+                        Photography
+                    </h3>
+
+                    <p>
+                        Capturing moments and
+                        creating memories.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="interest-card reveal">
+
+                    <div class="interest-icon">
+                        🎧
+                    </div>
+
+                    <h3>
+                        Music
+                    </h3>
+
+                    <p>
+                        Listening to music and
+                        enjoying different sounds.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="interest-card reveal">
+
+                    <div class="interest-icon">
+                        💄
+                    </div>
+
+                    <h3>
+                        Beauty
+                    </h3>
+
+                    <p>
+                        Exploring beauty, skincare,
+                        makeup, and self-expression.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="interest-card reveal">
+
+                    <div class="interest-icon">
+                        ✈️
+                    </div>
+
+                    <h3>
+                        Exploring
+                    </h3>
+
+                    <p>
+                        Discovering new places and
+                        experiencing new things.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section
+            id="skills">
+
+
+            <div
+                class="section-heading reveal">
+
+                <span>
+                    04 — My Skills
+                </span>
+
+                <h2>
+                    What I Can Do
+                </h2>
+
+                <p>
+                    Skills I have developed through
+                    learning and experience.
+                </p>
+
+            </div>
+
+
+            <div class="skills-container">
+
+
+                <div class="skill reveal">
+
+                    <div class="skill-info">
+
+                        <span>
+                            Creativity
+                        </span>
+
+                        <span>
+                            85%
+                        </span>
+
+                    </div>
+
+
+                    <div class="skill-bar">
+
+                        <div
+                            class="skill-progress"
+                            data-width="85%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skill reveal">
+
+                    <div class="skill-info">
+
+                        <span>
+                            Communication
+                        </span>
+
+                        <span>
+                            75%
+                        </span>
+
+                    </div>
+
+
+                    <div class="skill-bar">
+
+                        <div
+                            class="skill-progress"
+                            data-width="75%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skill reveal">
+
+                    <div class="skill-info">
+
+                        <span>
+                            Teamwork
+                        </span>
+
+                        <span>
+                            90%
+                        </span>
+
+                    </div>
+
+
+                    <div class="skill-bar">
+
+                        <div
+                            class="skill-progress"
+                            data-width="90%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skill reveal">
+
+                    <div class="skill-info">
+
+                        <span>
+                            Editing
+                        </span>
+
+                        <span>
+                            80%
+                        </span>
+
+                    </div>
+
+
+                    <div class="skill-bar">
+
+                        <div
+                            class="skill-progress"
+                            data-width="80%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GALLERY
+        ========================== -->
+
+        <section
+            class="white-section"
+            id="gallery">
+
+
+            <div
+                class="section-heading reveal">
+
+                <span>
+                    05 — My Gallery
+                </span>
+
+                <h2>
+                    Little Moments
+                </h2>
+
+                <p>
+                    A collection of memories and
+                    moments that are meaningful to me.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+
+                <div
+                    class="gallery-item reveal">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80"
+                        alt="Gallery 1">
+
+                </div>
+
+
+                <div
+                    class="gallery-item reveal">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"
+                        alt="Gallery 2">
+
+                </div>
+
+
+                <div
+                    class="gallery-item reveal">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80"
+                        alt="Gallery 3">
+
+                </div>
+
+
+                <div
+                    class="gallery-item reveal">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80"
+                        alt="Gallery 4">
+
+                </div>
+
+
+                <div
+                    class="gallery-item reveal">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80"
+                        alt="Gallery 5">
+
+                </div>
+
+
+                <div
+                    class="gallery-item reveal">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=80"
+                        alt="Gallery 6">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GOALS
+        ========================== -->
+
+        <section
+            id="goals">
+
+
+            <div
+                class="section-heading reveal">
+
+                <span>
+                    06 — My Goals
+                </span>
+
+                <h2>
+                    Where I'm Going
+                </h2>
+
+            </div>
+
+
+            <div
+                class="goals-container reveal">
+
+
+                <p class="goals-description">
+
+                    I believe that having dreams
+                    gives us something meaningful
+                    to work toward.
+
+                </p>
+
+
+                <div class="goals-grid">
+
+
+                    <div class="goal-card">
+
+                        <h3>
+                            🎓 Education
+                        </h3>
+
+                        <p>
+                            Continue learning and
+                            developing my knowledge.
+                        </p>
+
+                    </div>
+
+
+                    <div class="goal-card">
+
+                        <h3>
+                            ✨ Growth
+                        </h3>
+
+                        <p>
+                            Become a better version
+                            of myself every day.
+                        </p>
+
+                    </div>
+
+
+                    <div class="goal-card">
+
+                        <h3>
+                            🚀 Future
+                        </h3>
+
+                        <p>
+                            Build a future that
+                            I can be proud of.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section
+            class="contact-section"
+            id="contact">
+
+
+            <div class="reveal">
+
+                <span class="eyebrow">
+                    07 — Contact
+                </span>
+
+
+                <h2>
+                    Let's Connect.
+                </h2>
+
+
+                <p class="contact-description">
+
+                    Thank you for taking the time
+                    to visit my personal story.
+
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        Instagram
+                    </a>
+
+                    <a href="#">
+                        TikTok
+                    </a>
+
+                    <a href="mailto:emailkamu@gmail.com">
+                        Email
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 Mitha Chaerunnisa.
+        All Rights Reserved.
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           SCROLL REVEAL
+        ========================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        function revealOnScroll() {
+
+            revealElements.forEach(
+                function(element) {
+
+                    const elementTop =
+                        element.getBoundingClientRect().top;
+
+                    const windowHeight =
+                        window.innerHeight;
+
+
+                    if (
+                        elementTop <
+                        windowHeight - 100
+                    ) {
+
+                        element.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
 
         }
 
-        html {
 
-            scroll-behavior: smooth;
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+
+        revealOnScroll();
+
+
+        /* =========================
+           SKILL BAR
+        ========================== */
+
+        const skillBars =
+            document.querySelectorAll(
+                ".skill-progress"
+            );
+
+
+        const skillObserver =
+            new IntersectionObserver(
+                function(entries) {
+
+                    entries.forEach(
+                        function(entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                const width =
+                                    entry.target
+                                    .dataset.width;
+
+
+                                entry.target.style.width =
+                                    width;
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.5
+                }
+            );
+
+
+        skillBars.forEach(
+            function(bar) {
+
+                skillObserver.observe(bar);
+
+            }
+        );
+
+
+        /* =========================
+           DARK MODE
+        ========================== */
+
+        const themeButton =
+            document.getElementById(
+                "themeButton"
+            );
+
+
+        themeButton.addEventListener(
+            "click",
+            function() {
+
+                document.body.classList.toggle(
+                    "dark"
+                );
+
+
+                if (
+                    document.body.classList
+                    .contains("dark")
+                ) {
+
+                    themeButton.textContent =
+                        "☀";
+
+                } else {
+
+                    themeButton.textContent =
+                        "☾";
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           GALLERY LIGHTBOX
+        ========================== */
+
+        const galleryItems =
+            document.querySelectorAll(
+                ".gallery-item"
+            );
+
+
+        galleryItems.forEach(
+            function(item) {
+
+                item.addEventListener(
+                    "click",
+                    function() {
+
+                        const image =
+                            item.querySelector(
+                                "img"
+                            );
+
+
+                        const lightbox =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        lightbox.className =
+                            "lightbox";
+
+
+                        const closeButton =
+                            document.createElement(
+                                "button"
+                            );
+
+
+                        closeButton.className =
+                            "close-lightbox";
+
+
+                        closeButton.innerHTML =
+                            "&times;";
+
+
+                        const largeImage =
+                            document.createElement(
+                                "img"
+                            );
+
+
+                        largeImage.src =
+                            image.src;
+
+
+                        largeImage.alt =
+                            image.alt;
+
+
+                        lightbox.appendChild(
+                            largeImage
+                        );
+
+
+                        lightbox.appendChild(
+                            closeButton
+                        );
+
+
+                        document.body.appendChild(
+                            lightbox
+                        );
+
+
+                        closeButton.addEventListener(
+                            "click",
+                            function(event) {
+
+                                event.stopPropagation();
+
+                                lightbox.remove();
+
+                            }
+                        );
+
+
+                        lightbox.addEventListener(
+                            "click",
+                            function(event) {
+
+                                if (
+                                    event.target ===
+                                    lightbox
+                                ) {
+
+                                    lightbox.remove();
+
+                                }
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================
+           ESCAPE KEY LIGHTBOX
+        ========================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    const lightbox =
+                        document.querySelector(
+                            ".lightbox"
+                        );
+
+
+                    if (lightbox) {
+
+                        lightbox.remove();
+
+                    }
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
